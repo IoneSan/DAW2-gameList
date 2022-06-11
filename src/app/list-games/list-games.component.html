@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Lista de juegos</span>
+            <button class="btn btn-dark btn-lg float-end" routerLink="/addGame">Añadir nuevo juego</button>
+            <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Plataforma</th>
+                    <th>Logros</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let game of games">
+                    <td>{{ game.nombre }}</td>
+                    <td>{{ game.plataforma }}</td>
+                    <td>{{ game.logros }} / {{ game.logrosMax }}</td>
+                    <td>
+                      <button class="btn btn-dark btn-lg btn-secondary float" [routerLink]="['/editGame/',game.id]">Actualizar</button>
+                      <button (click)="deleteGame(game.id)" class="btn btn-dark btn-lg btn-secondary float-end">Borrar</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+

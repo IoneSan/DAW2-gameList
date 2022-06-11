@@ -1,0 +1,39 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3"></div>
+        <div class="card text-center">
+            <div class="card body">
+                <h3>{{ title }}
+                    <div *ngIf="loading"class="spinner-border float-end" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </h3>
+                
+                <span *ngIf="submitted && createGame.invalid" class="badge-danger bg-danger">Todos los campos son necesarios, los logros tienen valor númerico</span>
+                <form class="mt-4" [formGroup]="createGame" (ngSubmit)="addOrEdit()">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" class="control form-control-lg" formControlName="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" class="control form-control-lg" formControlName="plataforma" placeholder="Plataforma">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <input type="number" class="control form-control-lg" formControlName="logros" placeholder="Logros obtenidos">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="number" class="control form-control-lg" formControlName="logrosMax" placeholder="Logros totales">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-dark btn-lg btn-secondary mr-3">Añadir</button>
+                        <button type="text" class="btn btn-dark btn-lg" routerLink="/" >Volver a la lista</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

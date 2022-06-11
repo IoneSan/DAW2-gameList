@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-angular-firebase-301a0": {
+      "hosting": {
+        "gameList": [
+          "crud-angular-firebase-301a0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-angular-firebase-301a0"
+  }
+}
